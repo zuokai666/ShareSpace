@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>Share Space&nbsp;|&nbsp;Authentication Center</title>
+	
+	<link rel="stylesheet" href="../File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="../File/CSS/bootstrap-table.css">
+	<link rel="stylesheet" href="../File/CSS/font-awesome.css">
+	<link rel="stylesheet" href="../File/CSS/layout.css">
+	<link rel="stylesheet" href="../File/CSS/Custom.css">
+</head>
+<body>
+	
+	
+	
+	<nav id="header" class="navbar navbar-default  navbar-static-top" style="margin-bottom: 0">
+    <div class="navbar-header"><a class="navbar-brand">Share Space 后台管理中心</a></div>
+    <div class="nav navbar-right">
+        <div class="navbar-brand">
+        	 <a href="../User/LogOff"><i class="glyphicon glyphicon-off"></i>&nbsp;退出</a>           
+        </div>
+    </div>
+    <div class="navbar-default sidebar">
+        <div class="sidebar-nav navbar-collapse">
+            <ul id="side-menu" class="nav">
+            	<li>
+                    <a href="../Admin/Authentication"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;认证管理</a>
+                </li>
+                <li>
+                    <a href="../Admin/Notice"><i class="glyphicon glyphicon-bullhorn"></i>&nbsp;公告管理</a>
+                </li>
+                <li>
+                    <a href="../Admin/Report"><i class="glyphicon glyphicon-earphone"></i>&nbsp;举报管理</a>
+                </li>
+                <li>
+                    <a href="../Admin/Tag"><i class="glyphicon glyphicon-tags"></i>&nbsp;标签管理</a>
+                </li>
+                <!--  
+                <li>
+                    <a href="#"><i class="icon-user icon-fixed-width"></i>用户中心<span class="pull-right icon-arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="../../UserManager/DisplayInfo">个人信息</a></li>
+                        <li><a href="../../UserManager/ChangePassword">密码修改</a></li>
+                        <li><a href="../../UserManager/QueryFamily">亲情号码</a></li>
+                        <li><a href="../../UserManager/UserSuggest">用户反馈</a></li>
+                    </ul>
+                </li>
+                -->
+                <li>
+                    <a href="../User/Welcome"><i class="glyphicon glyphicon-home"></i>&nbsp;个人中心</a>
+                </li>
+                <li>
+                    <a href="../index.html"><i class="glyphicon glyphicon-hand-right"></i>&nbsp;回到首页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	</nav>
+
+
+    <div id="page-wrapper">
+    <div>
+		<div>
+		    <div class="row">
+		        <div class="col-lg-12">
+		            <h1 class="page-header">认证管理中心</h1>
+		        </div>
+		    </div>
+		    <div class="row">
+		        <div class="col-lg-12">
+		            <div class="panel panel-default">
+		                <div class="panel-body">
+		                	<div>
+		                		<a href="javascript:queryStatus(0)">所有状态</a>
+								<a href="javascript:queryStatus(1)">用户提交</a>
+								<a href="javascript:queryStatus(2)">审核中</a>
+								<a href="javascript:queryStatus(3)">用户取消</a>
+								<a href="javascript:queryStatus(4)">审核通过</a>
+								<a href="javascript:queryStatus(5)">审核未通过</a>
+		                	</div>
+		                	<br />
+		                    <table id="table"></table>        
+		        		</div>        
+		        	</div>        
+		        </div>      
+		    </div>        
+	    </div>     
+    </div>
+    </div>
+	
+	
+	
+	
+	
+	<script src="../File/JS/jquery.min.js"></script>
+	<script src="../File/JS/bootstrap.min.js"></script>
+	<script src="../File/JS/bootstrap-table.js"></script>
+	<script src="../File/JS/bootstrap-table-zh-CN.js"></script>
+    <script src="../File/JS/metisMenu.js"></script>
+    <script src="../File/JS/layer/layer.js"></script>
+    <script src="../File/Page/Admin/authentication.table.js"></script>
+    
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog">
+	      <div class="modal-content">
+	         <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel">
+	              	修改状态及理由
+	            </h4>
+	         </div>
+	         <div class="modal-body">
+	           	 
+	           	 <form role="form">
+					  <div class="form-group">
+					    	<label>状态</label>
+					    	<input type="hidden" name="modalid" />
+					    	<select class="form-control" id="modalstatus">
+								<option value="2">审核中</option>
+								<option value="4">审核通过</option>
+								<option value="5">审核未通过</option>
+							</select>
+					  </div>
+					  <div class="form-group">
+					    	<label>理由</label>
+<textarea placeholder="请输入理由" class="form-control" rows="5" id="modalresult"></textarea>
+					  </div>
+				</form>
+	           	 
+	         </div>
+	         <div class="modal-footer">
+	            <button type="button" class="btn btn-default" 
+	               data-dismiss="modal">关闭
+	            </button>
+	            <button type="button" class="btn btn-primary" id="submit">
+	               	我已慎重考虑好，确定提交更改
+	            </button>
+	         </div>
+	      </div>
+	</div>
+		</div>
+    
+    
+    
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

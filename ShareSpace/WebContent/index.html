@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<meta Name="Keywords" Content="Share Space">
+	<meta Name="description" Content="分享空间，留住你我" >
+	<meta Name="author" Content="King" >
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+	<title>Share Space Index&nbsp;|&nbsp;Home Page</title>
+	
+	<link rel="stylesheet" href="./File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="./File/CSS/Custom.css">
+</head>
+<body>
+	<div class="frame_top">
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">
+		           	 <a href="./index.html">Share Space | 分享空间，留住你我</a>&nbsp;&nbsp;Beta 1.1.0.0
+		           	 <span id="status" class="right"></span>
+		        </h3>
+		    </div>
+	    	<div style="margin-top:15px;float:left;">
+		    	<img alt="logo" src="./File/Image/logo.png" width="400px;"/>
+		    </div>
+		    <div class="foryou">
+		    	<h2>For you.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For us.</h2>
+		    </div>
+		</div>
+	</div>
+	<div class="frame_left">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+		        	<i class="glyphicon glyphicon-tasks"></i>&nbsp;&nbsp;分类
+		    </div>
+		    <div class="panel-body">
+		        	<h5><a href="javascript:queryShare(1)">技术专区</a></h5>
+		        	<h5><a href="javascript:queryShare(3)">每日分享</a></h5>
+		        	<h5><a href="javascript:queryShare(5)">秋名车队</a></h5>
+		        	<h5><a href="./Web/AboutWeb">网站历程</a></h5>
+		    </div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+		        <i class="glyphicon glyphicon-road"></i>&nbsp;&nbsp;排行
+		    </div>
+		    <div class="panel-body">
+		    	<div>
+		    		<!-- Rank列表 -->
+		    		<table id="rank"></table>
+		    	</div>
+		        <h5><a href="./User/Rank">详细排名>></a></h5>
+		    </div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+		        <i class="glyphicon glyphicon-stats"></i>&nbsp;&nbsp;统计
+		    </div>
+		    <div class="panel-body">
+		    		<h5>分享：<span id="Statisticsshare"></span></h5>
+		    		<h5>评论：<span id="Statisticscomment"></span></h5>
+		        	<h5>注册：<span id="Statisticsregister"></span></h5>
+		        	<h5>访问：<span id="Statisticspageview"></span></h5>
+		    </div>
+		</div>
+	</div>
+	<div class="frame_index">
+		<div class="panel panel-default">
+		    <div style="margin:10px 10px 0px 10px;">
+		    	<ul class="nav nav-tabs" role="tablist" id="tablist">
+				  <li id="index" role="presentation" class="active"><a href="javascript:queryShare(0)">首页</a></li>
+				  
+				</ul>
+		    </div>
+		    <div class="panel-body">
+		    	<!-- 分享列表 -->
+		    	<div id="share">
+		    		<!-- 使用share.js来生成分享列表及分页 -->
+		    	</div>
+		    </div>
+		    <div class="panel-footer">
+		    	<div class="textcenter">Copyright ©2016 King &nbsp;&nbsp;京ICP备99999999号</div>
+		    </div>
+		</div>
+	</div>
+	<div class="frame_right">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+		        	 <i class="glyphicon glyphicon-time"></i>&nbsp;&nbsp;昨日推荐排行
+		    </div>
+		    <div class="panel-body">
+		    	<input type="text" class="form-control" style="width:150px;float:left;" />&nbsp;&nbsp;
+		    	<input type="button" class="btn btn-default" style="float:left;" value="找找看"/>
+		    	<div style="clear:both;"></div>
+		    	<hr />
+		        <h5>昨日说法</h5>
+		        <h5>今日说法</h5>
+		        <h5>明日说法</h5>
+		    </div>
+		</div>
+		<!-- end -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+		        <a href="./Web/Notice"><i class="glyphicon glyphicon-bullhorn"></i>&nbsp;&nbsp;公告</a>
+		    </div>
+		    <div class="panel-body">
+		    	<div id='notice'></div>
+		    </div>
+		</div>
+	</div>	
+	<div style="position:fixed;right:50px;bottom:50px;">
+		<a href="#top">
+			<i class="glyphicon glyphicon-plane"></i>
+			<i class="glyphicon glyphicon-plane"></i>
+			<i class="glyphicon glyphicon-plane"></i>
+			<br/>
+			<kbd>回到顶部</kbd>
+		</a>
+	</div>
+	
+	
+	
+	
+	<script src="./File/JS/jquery.min.js"></script>
+	<script src="./File/JS/layer/layer.js"></script>
+	<script src="./File/JS/bootstrap.min.js"></script>
+	<script src="./File/JS/jquery.cookie.js"></script>
+	<script src="./File/JS/king.common.js"></script>
+	<script src="./File/JS/jquery.login.js"></script>
+	<script src="./File/JS/jquery.share.js"></script>
+	<script src="./File/JS/jquery.index.js"></script>
+</body>
+</html>

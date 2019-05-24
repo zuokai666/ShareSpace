@@ -1,0 +1,51 @@
+.top{
+	margin-top:20px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+	width:900px;
+}
+.title{
+	//margin:100px auto 10px auto;
+	text-align:center;
+}
+.name{
+	margin:0px auto 70px auto;
+	text-align:center;
+	color:white;
+}
+.left{
+	width:230px;
+	float:left;
+}
+.left_index{
+	padding:5px;
+}
+.foot{
+	float:left;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+	width:900px;
+}
+.right{
+	MARGIN-LEFT:20px;
+	width:650px;
+	float:left;
+}
+.back{
+	background: url('../../File/Image/PersonalIndex/body1.jpg') no-repeat,url('../../File/Image/PersonalIndex/body_repeat.png') repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

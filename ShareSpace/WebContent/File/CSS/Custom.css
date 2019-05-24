@@ -1,0 +1,122 @@
+.frame_index{
+	float:left;
+	margin-top:10px;
+	MARGIN-RIGHT:10px;
+	MARGIN-LEFT:10px;
+	width:60%;
+}
+.frame_left{
+	float:left;
+	margin-top:10px;
+	MARGIN-LEFT:10px;
+	width:13%;
+}
+.frame_right{
+	float:left;
+	margin-top:10px;
+	MARGIN-LEFT:auto;
+	MARGIN-RIGHT:auto;
+	width:27%;
+}
+/*
+.frame_index{
+	float:left;
+	margin-top:10px;
+	MARGIN-RIGHT:10px;
+	MARGIN-LEFT:10px;
+	width:800px;
+}
+.frame_left{
+	float:left;
+	margin-top:10px;
+	MARGIN-LEFT:10px;
+	width:180px;
+}
+.frame_right{
+	float:left;
+	margin-top:10px;
+	MARGIN-LEFT:auto;
+	MARGIN-RIGHT:auto;
+}
+*/
+.frame_top{
+	margin-top:10px;
+	MARGIN-LEFT:10px;
+	MARGIN-RIGHT:10px;
+	height:140px;
+}
+.textcenter{
+	text-align:center;
+}
+.right{
+	float: right;
+}
+.foryou{
+	float:left;
+	MARGIN-LEFT:120px;
+	margin-top:0px;
+}
+.content{
+	margin:10px 10px;
+}
+#frame{
+	margin-top:60px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+	width:450px;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+#share a:hover{
+    color:#9B30FF;
+}
+#rank a:hover{
+    color:#9B30FF;
+}
+/**
+个人页面css
+*/
+.person_index{
+	margin-top:20px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+	width:800px;
+}
+
+/**
+公告页面css
+*/
+.notice_index{
+	margin-top:20px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+	width:1200px;
+}
+
+.comments{
+	margin-top:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

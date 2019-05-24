@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>Share Space&nbsp;|&nbsp;Person Set</title>
+	
+	<link rel="stylesheet" href="../File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="../File/CSS/Custom.css">
+</head>
+<body>
+	<div class="person_index">
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">
+		           	 个人设置<span style="float:right;"><a href="../index.html">返回首页</a></span>
+		        </h3>
+		    </div>
+		    <div class="panel-body">
+		    		<div>
+						<a href="../User/Welcome">欢迎</a>
+						<a href="../User/Insert">添加分享</a>
+						<a href="javascript:link()">个人首页</a>
+						<a href="../User/Set">个人设置</a>
+						<a href="../User/Relation">关系图</a>
+						<a href="../User/Fan">关注及粉丝</a>
+						<a href="../Message/InBox">我的信箱</a>
+						<a href="../Authentication/Index">认证中心</a>
+					</div>
+					<br />
+		        	<div>
+						<form id="ajaxForm" role="form" Enctype="multipart/form-data">
+						  <div class="form-group">
+						    <label for="exampleInputFile">头像</label>
+						    <br />
+							<img alt="头像丢失，请联系管理员" id="title_image" src="" class="img-circle" width="100px;" />
+						  </div>
+						  <div class="form-group">
+							<label for="exampleInputFile">图片------图片大小不能超过3M（未加图片截取）</label>
+							<input type="file" name="url" />
+						  </div>
+						  <input type="submit" class="btn btn-primary btn-xs" id="t" value="修改头像" />
+						  <code>由于现在没有添加图片截取功能,会导致头像变形，所以我暂时取消掉了更改头像功能...</code>
+						  <br /><br />
+						  <div class="form-group">
+						    <label>昵称</label>
+						    <input type="text" class="form-control"id="name" placeholder="">
+						  </div>
+						  <input type="button" class="btn btn-primary btn-xs" id="n" value="修改昵称" />
+						  <br /><br />
+						  <div class="form-group">
+						    <label>密码</label>
+						    <input type="password" class="form-control" id="password" placeholder="密码">
+						  </div>
+						  <input type="button" class="btn btn-primary btn-xs" id="p" value="修改密码" />
+						  <br /><br />
+						  <div class="form-group">
+						    <label>地点</label>
+						    <input type="text" class="form-control" id="location" placeholder="地点" />
+						  </div>
+						  <div class="form-group">
+						    <label>简介</label>
+						    <input type="text" class="form-control" id="description" placeholder="个人简介" />
+						  </div>
+						  <input type="button" class="btn btn-primary btn-xs" id="m" value="修改个人信息" />
+						  <br /><br />
+						  <div class="form-group">
+						    <label>标签</label>
+						    <input type="text" class="form-control" id="tag" disabled />
+						  </div>
+						  <input type="button" class="btn btn-primary btn-xs" id="ut" value="修改标签" />
+						  <br /><br />
+						</form>
+					</div>
+		    </div>
+		     <div class="panel-footer">
+		    	<div class="textcenter">Copyright ©2016 King &nbsp;&nbsp;京ICP备99999999号</div>
+		    </div>
+		</div>
+	</div>
+	
+	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog">
+	      <div class="modal-content">
+	      	 <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h5>
+	            	<i class="glyphicon glyphicon-bell"></i>&nbsp;
+	              	提示：点击标签可进行<code>添加</code>/<code>取消</code>
+	            </h5>
+	         </div>
+	         <div class="modal-body">
+	         	 
+	           	 <h5><i class="glyphicon glyphicon-tags"></i>&nbsp;&nbsp;我的标签</h5>
+	           	 	<div id="MyTag"></div>
+	           	 <hr />
+	           	 <h5><i class="glyphicon glyphicon-tower"></i>&nbsp;&nbsp;其它标签</h5>
+	           	 	<div id="ElseTag"></div>
+	         </div>
+	         <div class="modal-footer">
+	            <button type="button" class="btn btn-default" 
+	               data-dismiss="modal">关闭
+	            </button>
+	            <button type="button" class="btn btn-primary" id="submit">
+	               	确定
+	            </button>
+	         </div>
+	      </div>
+	   </div>
+	</div>
+	
+
+	<script src="../File/JS/jquery.min.js"></script>
+	<script src="../File/JS/layer/layer.js"></script>
+	<script src="../File/JS/bootstrap.min.js"></script>
+	<script src="../File/JS/jquery.form.js"></script>
+	<script src="../File/JS/king.common.js"></script>
+	<script src="../File/JS/jquery.set.js"></script>
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+/*!
+ * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,body {
+    background-color: #f8f8f8;
+    min-height: 100%;
+    height: auto;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    background-color: #fff;
+    /*position: inherit;*/
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid #e7e7e7;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.sidebar ul li a.active {
+    background-color: #eee;
+}
+
+.sidebar .icon-arrow:before {
+    content: "\f104";
+}
+
+.sidebar .active > a > .icon-arrow:before {
+    content: "\f107";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: 0 !important;
+}
+
+.sidebar .nav-second-level li a {
+    padding-left: 37px;
+}
+
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+
+.sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    margin-top: 51px;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+}
+
+div.navbar-right {
+    margin-right: 0;
+}
+
+ul.nav-second-level li.actived, ul#side-menu li.actived {
+    background-color: #eee;
+}
+
+.navbar-static-top{
+	z-index:9;
+}
+
+td, th {
+	cursor: default;
+}
+
+/*footer*/
+footer{
+	height:40px;
+	width:100%;
+	background-color : rgba(0,0,0,0.3);
+	position:fixed;
+	bottom : 0;left :0;
+	z-index:10;
+    color: #eeeeee;
+	
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+footer.actived{
+	height:160px;
+}
+footer .footer-cell{
+    padding: 8px;
+    font-size: 20px;
+    text-shadow: 0 0 10px #000000;
+}

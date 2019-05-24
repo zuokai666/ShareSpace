@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>Share Space&nbsp;|&nbsp;Login</title>
+	
+	<link rel="stylesheet" href="../File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="../File/CSS/Custom.css">
+</head>
+<body>
+	<div id="frame">
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">
+		           	 Login Share Space
+		        </h3>
+		    </div>
+		    <div class="panel-body">
+	        	<form role="form">
+					  <div class="form-group">
+					    	<label>账号</label>
+					    	<input type="text" class="form-control" name="account" placeholder="请输入账号" />
+					  </div>
+					  <div class="form-group">
+					    	<label>密码</label>
+					    	<input type="password" class="form-control" name="password" placeholder="请输入密码"/>
+					  </div>
+					  <div class="checkbox">
+					  		<label>
+					    		<input type="checkbox" name="remember" />记住我一周，下次自动登录
+					    	</label>
+ 						  </div>
+					  <input type="button" class="btn btn-default btn-block" name="submit" value="登录" />
+					  <input type="button" class="btn btn-default btn-block" name="register" value="注册" />
+					  <input type="button" class="btn btn-default btn-block" name="return" value="首页" />
+				</form>
+		    </div>
+		</div>
+	</div>
+	
+	
+	<script src="../File/JS/jquery.min.js"></script>
+	<script src="../File/JS/jquery.cookie.js"></script>
+	<script src="../File/JS/jquery.md5.js"></script>
+	<script src="../File/JS/king.common.js"></script>
+	<script src="../File/JS/layer/layer.js"></script>
+	<script>
+		$(function($){
+			$("input[name='return']").click(function(){
+				window.location.href="../index.html";
+			});
+			$("input[name='register']").click(function(){
+				window.location.href="../User/Register";
+			});
+			$("input[name='submit']").click(function(){
+				var u=$("input[name='account']").val();
+				var p=$("input[name='password']").val();
+				//p=$.md5(p);
+				var r=$("input[name='remember']:checked").val();
+				if(verify(u) || verify(p)){
+					layer.msg("亲，你的账号或密码未填写哦", {icon: 6,time:1500});
+					return;
+				}
+				$.ajax({
+					   type: "POST",
+					   url: "../User/LoginAction",
+					   data:"account="+u+"&password="+p+"&remember="+r,
+					   success: function(msg){
+						   if(msg.result=="1"){
+							   window.location.href="../index.html";
+						   }else{
+							   layer.msg(msg.tip, {icon: 5,time:2000});
+						   }
+					   }
+				});
+			});
+			
+			var a=$.cookie('account');
+			var p=$.cookie('password');
+			var r=$.cookie('remember');
+			if(typeof a!="undefined"&&typeof p!="undefined"&&typeof r!="undefined"){
+				$("input[name='account']").val(a);
+				$("input[name='password']").val(p);
+				$("input[name='remember']").attr("checked","checked");
+			}
+			
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

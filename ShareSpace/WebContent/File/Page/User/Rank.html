@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>Share Space&nbsp;|&nbsp;Rank</title>
+	
+	<link rel="stylesheet" href="../File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="../File/CSS/Custom.css">
+</head>
+<body>
+	<div style="
+                    background: url('../File/Image/Rank/body2.jpg') no-repeat;
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    background-color:#0d3b6c;
+     ">
+		<div style="MARGIN-LEFT:auto;margin-top:60px;MARGIN-RIGHT:auto;width:350px;">
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			        <h3 class="panel-title">
+			           	 <i class="glyphicon glyphicon-road"></i>&nbsp;&nbsp;Share Space Rank
+			        </h3>
+			    </div>
+			    <div class="panel-body">
+		        	<!-- Rank列表 -->
+	   				<table id="rank"></table>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div style="position:fixed;right:150px;top:70px;">
+		<a href="../index.html">
+			<kbd>返回首页</kbd>
+		</a>
+	</div>
+	
+
+	<script src="../File/JS/jquery.min.js"></script>
+	<script>
+		$(function($){
+			getRanks();
+		});
+		function getRanks(){
+			$.ajax({
+			   type: "POST",
+			   url: "../User/GetRanks",
+			   success: function(msg){
+				   var r=$("#rank");
+				   r.append("<tr><td style=\"padding:3px;\"><img src=\"../File/Image/Rank/f.png\" /></td><td style=\"padding:3px;width:250px;\"><span style=\"color:red\">"+Link(msg[0].id,msg[0].name)+"</a></span></td><td style=\"padding:3px;\">"+msg[0].rank+"</td></tr>");
+				   r.append("<tr><td style=\"padding:3px;\"><img src=\"../File/Image/Rank/s.png\" /></td><td style=\"padding:3px;width:250px;\"><span style=\"color:red\">"+Link(msg[1].id,msg[1].name)+"</span></td><td style=\"padding:3px;\">"+msg[1].rank+"</td></tr>");
+				   r.append("<tr><td style=\"padding:3px;\"><img src=\"../File/Image/Rank/t.png\" /></td><td style=\"padding:3px;width:250px;\"><span style=\"color:red\">"+Link(msg[2].id,msg[2].name)+"</span></td><td style=\"padding:3px;\">"+msg[2].rank+"</td></tr>");
+				   for(var i=3;i<msg.length;i++){
+					   r.append("<tr><td>&nbsp;<span style=\"width:30px;height:30px;background:#CDC9C9;color:white\">&nbsp;"+(i+1)+"&nbsp;</span></td><td style=\"padding:3px;\">"+Link(msg[i].id,msg[i].name)+"</td><td style=\"padding:3px;\">"+msg[i].rank+"</td></tr>");
+				   }
+			   }
+			});
+		}
+		function Link(id,name){
+			return "<a href=\"../User/Index?id="+id+"&math="+Math.random()+"\">"+name+"</a>";
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

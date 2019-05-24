@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>Share Space&nbsp;|&nbsp;Send</title>
+	
+	<link rel="stylesheet" href="../File/CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="../File/CSS/Custom.css">
+</head>
+<body>
+	<div class="person_index">
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">
+		           	 欢迎<span style="float:right;"><a href="../index.html">返回首页</a></span>
+		        </h3>
+		    </div>
+		    <div class="panel-body">
+		    		<div>
+						<a href="../User/Welcome">欢迎</a>
+						<a href="../User/Insert">添加分享</a>
+						<a href="javascript:link()">个人首页</a>
+						<a href="../User/Set">个人设置</a>
+						<a href="../User/Relation">关系图</a>
+						<a href="../User/Fan">关注及粉丝</a>
+						<a href="../Message/InBox">我的信箱</a>
+						<a href="../Authentication/Index">认证中心</a>
+					</div>
+					<hr style="margin:8px auto 8px auto;">
+					<div>
+						<div class="btn-group">
+						  <button type="button" class="btn btn-default" onclick="javascript:location.href='../Message/InBox'">
+						    	<i class="glyphicon glyphicon-envelope"></i>
+						    	收件箱
+						  		<span id="read" style="background-color:red;" class="badge"></span>
+						  </button>
+						  <button type="button" class="btn btn-default" onclick="javascript:location.href='../Message/OutBox'">
+						  <i class="glyphicon glyphicon-time"></i>  
+						    发件箱
+						  </button>
+						  <button type="button" class="btn btn-default" onclick="javascript:location.href='../Message/Send'">
+						  <i class="glyphicon glyphicon-pencil"></i>  
+						    发邮件
+						  </button>
+						</div>
+					</div>
+					<br/>
+		        	<form role="form">
+						  <div class="form-group">
+						    	<label>发送人</label>
+						    	<input placeholder="请输入发送人昵称" class="form-control" name="name"/>
+						  </div>
+						  <div class="form-group">
+						    	<label>信息</label>
+						    	<textarea placeholder="请输入发送信息" class="form-control" rows="10" id="content"></textarea>
+						  </div>
+						  <input type="button" class="btn btn-default btn-block" name="submit" value="立刻发送" />
+					</form>
+		    </div>
+		     <div class="panel-footer">
+		    	<div class="textcenter">Copyright ©2016 King &nbsp;&nbsp;京ICP备99999999号</div>
+		    </div>
+		</div>
+	</div>
+	
+	<script src="../File/JS/jquery.min.js"></script>
+	<script src="../File/JS/king.common.js"></script>
+	<script src="../File/JS/layer/layer.js"></script>
+	<script>
+		$(function($){
+			setReadNum();
+			$("input[name='submit']").click(function(){
+				var name=$("input[name='name']").val();
+				var content=$("#content").val();
+				$.ajax({
+				   type: "POST",
+				   url: "../Message/SendAction",
+				   data:'name='+name+"&content="+content,
+				   success: function(responseText){
+					   if(responseText.result=="1"){
+						   layer.msg(responseText.tip, {icon: 6,time:1000});
+						   $("input[name='name']").val("");
+						   $("#content").val("");
+					   }else{
+						   layer.msg(responseText.tip, {icon: 5,time:1000});
+					   }
+				   }
+				});
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
