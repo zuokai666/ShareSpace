@@ -1,0 +1,3 @@
+mybatis:
+  typeAliasesPackage: org.gms.dao
+  mapperLocations: classpath:mapper/*.xml

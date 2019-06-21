@@ -1,0 +1,15 @@
+http://localhost:9999/gms/goodsType/manage
+http://localhost:9999/gms/html/goodsType/manage.html
+http://localhost:9999/gms/js/jquery.min.js
+
+
+
+http://localhost:9999/gms/goodsType/listAll
+
+
+
+
+
+
+
+

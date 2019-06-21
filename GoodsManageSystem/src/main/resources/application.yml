@@ -10,7 +10,7 @@ spring:
   datasource:
     username: root
     password: d2p9bupt
-    url: jdbc:mysql://localhost:3306/workflow
+    url: jdbc:mysql://localhost:3306/gms
     driver-class-name: com.mysql.jdbc.Driver
   mvc:
     view:
