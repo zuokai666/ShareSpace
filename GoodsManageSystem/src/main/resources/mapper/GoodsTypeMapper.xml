@@ -6,4 +6,13 @@
     <select id="selectAll" resultType="org.gms.dto.GoodsTypeDto">
     	select * from GoodsType where activity = '1'
     </select>
+    
+    <update id="updateGoodsType" parameterType="org.gms.dto.GoodsTypeDto">
+        update GoodsType
+        <set>
+        	version=version+1,
+            <if test="name != null">name=#{name}</if>
+        </set>
+        where id=#{id} and version=#{version} and activity = '1'
+	</update>
 </mapper>

@@ -52,4 +52,19 @@ public class GoodsTypeController {
 	public String add(GoodsTypeDto goodsType){
 		return null;
 	}
+	
+	@RequestMapping(value="/update")
+	public JsonNode update(GoodsTypeDto goodsType){
+		try {
+			int num = goodsTypeService.updateGoodsType(goodsType);
+			if(num == 1){
+				return new HttpBody(true, "操作成功", "").toResult();
+			}else {
+				return new HttpBody(false, "操作失败:当前数据已被其它用户删除或修改,请重试", "").toFailResult();
+			}
+		} catch (Exception e) {
+			log.error("", e);
+			return new HttpBody(false, "操作失败:"+e.getMessage(), "").toFailResult();
+		}
+	}
 }
