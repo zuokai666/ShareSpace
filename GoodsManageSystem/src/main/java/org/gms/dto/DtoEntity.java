@@ -5,7 +5,14 @@ public abstract class DtoEntity {
 	private int id;
 	private int version=0;
 	private int activity=1;
+	private String update_time;
 	
+	public String getUpdate_time() {
+		return update_time;
+	}
+	public void setUpdate_time(String update_time) {
+		this.update_time = update_time;
+	}
 	public int getId() {
 		return id;
 	}

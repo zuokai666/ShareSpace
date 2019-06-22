@@ -19,10 +19,10 @@ public class Goods extends Entity{
 	private String beginTime;//开始时间
 	private String endTime;//结束时间
 	private BigDecimal price;//单价---decimal(6,2)---最大---9999.99
+	private String unit;//单位
 	private Distributor distributor;//经销商
 	private GoodsFactory goodsFactory;//厂家
 	private String remark;//备注
-	private String update_time;//更新时间
 }
 
 /**

@@ -16,10 +16,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 /**
  * 物品类型管理接口控制器
  * 
- * http://localhost:9999/gms/goodsType/manage
- * http://localhost:9999/gms/html/goodsType/manage.html
- * http://localhost:9999/gms/js/jquery.min.js
- * 
  * @author King
  * 
  */
@@ -44,7 +40,7 @@ public class GoodsTypeController {
 			return new HttpBody(true, "操作成功", dtos).toResult();
 		} catch (Exception e) {
 			log.error("", e);
-			return new HttpBody(false, "操作失败:"+e.getMessage(), "").toFailResult();
+			return new HttpBody(false, "操作失败:"+e.getMessage()).toResult();
 		}
 	}
 	
@@ -60,11 +56,26 @@ public class GoodsTypeController {
 			if(num == 1){
 				return new HttpBody(true, "操作成功", "").toResult();
 			}else {
-				return new HttpBody(false, "操作失败:当前数据已被其它用户删除或修改,请重试", "").toFailResult();
+				return new HttpBody(false, "操作失败:当前数据已被其它用户删除或修改,请重试").toResult();
 			}
 		} catch (Exception e) {
 			log.error("", e);
-			return new HttpBody(false, "操作失败:"+e.getMessage(), "").toFailResult();
+			return new HttpBody(false, "操作失败:"+e.getMessage()).toResult();
+		}
+	}
+	
+	@RequestMapping(value="/delete")
+	public JsonNode delete(GoodsTypeDto goodsType){
+		try {
+			int num = goodsTypeService.updateGoodsType(goodsType);
+			if(num == 1){
+				return new HttpBody(true, "操作成功", "").toResult();
+			}else {
+				return new HttpBody(false, "操作失败:当前数据已被其它用户删除或修改,请重试").toResult();
+			}
+		} catch (Exception e) {
+			log.error("", e);
+			return new HttpBody(false, "操作失败:"+e.getMessage()).toResult();
 		}
 	}
 }

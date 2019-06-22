@@ -10,6 +10,7 @@ create table Goods(
 	beginTime varchar(19) not null comment '开始时间yyyy-MM-dd HH:mm:ss',
 	endTime varchar(19) not null comment '结束时间yyyy-MM-dd HH:mm:ss',
 	price decimal(6,2) not null comment '单价max9999.99',
+	unit varchar(19) not null comment '单位',
 	distributor varchar(255) default null comment '经销商',
 	goodsFactory varchar(255) default null comment '厂家',
 	remark varchar(255) default null comment '备注',
